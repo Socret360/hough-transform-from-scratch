@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 
 
-def line_detection_vectorized(image, edge_image, num_rhos=180, num_thetas=180, t_count=220):
+def hough_transform_vectorized(image, edge_image, num_rhos=180, num_thetas=180, t_count=220):
   edge_height, edge_width = edge_image.shape[:2]
   edge_height_half, edge_width_half = edge_height / 2, edge_width / 2
   #
@@ -92,4 +92,4 @@ if __name__ == "__main__":
         cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5)),
         iterations=1
     )
-    line_detection_vectorized(image, edge_image)
+    hough_transform_vectorized(image, edge_image)
